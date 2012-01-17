@@ -5,16 +5,59 @@
 <link href="css/main.css" rel="stylesheet" />
 </head>
 <body>
-<header><h1>Presentation: the strategy pattern</h1></header>
 <div id="impress">
-	<div class="step" data-x="0" data-y="0" data-scale="1">
-		The Strategy Pattern
-	</div>
+	<header class="step">
+		<h1>The Strategy Pattern</h1>
+	</header>
 	
-	<div class="step" data-x="400" data-y="40" data-scale"2">
-		TWO
-	</div>
+	<section class="step">
+		<blockquote>
+		Strategy lets the algorithm vary independently from clients that use it.
+		<footer><cite>Gamma <abbr title="and others">et al</abbr> (1994: 315)</cite></footer></footer>
+		</blockquote>
+	</section>
+
+	<section class="step">
+		<h2>Why?</h2>
+	</section>
+	
+	<section class="step">
+		<p>Alternative to inheritance</p>
+	</section>
+	
+	<section class="step">
+		<p>Change behaviour at runtime</p>
+	</section>
+	
+	<section class="step">
+		<p>Loose coupling</p>
+	</section>
+	
+	<section class="step">
+		<h2>How?</h2>
+	</section>
+	
+	<section class="step">
+		<h2>SOLID?<h2>
+	</section>
+	
+	<section class="step">
+		<h3>Single responsibility</h3>
+		<p>If you want to change the behaviour, you change the concrete strategy; not the context.</p>
+	</section>
+	
+	<section class="step">
+		<h3>Open/closed principle</h3>
+		<p>Substitute concrete strategies without changing the context code.<p>
+	</section>
+	
+	<section class="step" id="references">
+		<h2>References</h2>
+		<ul>
+			<li>Gamma E., Helm R., Johnson R. and Vlissides J. (1994) <cite>Design Patterns: Elements of reusable object-oriented software</cite>, Indianapolis: Addison Wesley</li>
+		</ul>
+	</section>
 </div>
-<script src="impress.js/js/impress.js"></script>
+<!--<script src="impress.js/js/impress.js"></script>-->
 </body>
 </html>
