@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="../css/uml-diagram.css"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="510" height="230">
+	<g>
+		<rect x="0" y="0" width="150" height="75" />
+		<rect x="0" y="0" width="150" height="40" />
+		<text x="75" y="25" class="name">Context</text>
+		<text x="5" y="65" class="contents">ContextInterface()</text>
+	</g>
+	<g>
+		<polygon points="150,20 160,15 170,20 160,25"/>
+		<line x1="170" x2="360" y1="20" y2="20" />
+	</g>
+	<g transform="translate(360,0)" class="abstract">
+		<rect x="0" y="0" width="150" height="75" />
+		<rect x="0" y="0" width="150" height="40" />
+		<text x="75" y="25" class="name">IStrategy</text>
+		<text x="5" y="65" class="contents">AlgorithmInterface()</text>
+	</g>
+	<g>
+		<polygon points="435,75 445,95 425,95"/>
+		<line x1="435" x2="435" y1="95" y2="150"/>
+		<line x1="75" x2="435" y1="115" y2="115"/>
+		<line x1="75" x2="75" y1="115" y2="150"/>
+		<line x1="255" x2="255" y1="115" y2="150"/>
+	</g>
+	<g transform="translate(0,150)">
+		<rect x="0" y="0" width="150" height="75" />
+		<rect x="0" y="0" width="150" height="40" />
+		<text x="75" y="25" class="name">StrategyA</text>
+		<text x="5" y="65" class="contents">AlgorithmInterface()</text>
+	</g>
+	<g transform="translate(180,150)">
+		<rect x="0" y="0" width="150" height="75" />
+		<rect x="0" y="0" width="150" height="40" />
+		<text x="75" y="25" class="name">StrategyB</text>
+		<text x="5" y="65" class="contents">AlgorithmInterface()</text>
+	</g>
+	<g transform="translate(360,150)">
+		<rect x="0" y="0" width="150" height="75" />
+		<rect x="0" y="0" width="150" height="40" />
+		<text x="75" y="25" class="name">StrategyC</text>
+		<text x="5" y="65" class="contents">AlgorithmInterface()</text>
+	</g>
+</svg >

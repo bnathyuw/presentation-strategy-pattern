@@ -1,0 +1,20 @@
+rect, polygon, line {
+	stroke: black;
+	stroke-width: 1px;
+}
+rect, polygon {
+	width: 120px;
+	fill: white;
+}
+.abstract text {
+	font-style: italic;
+}
+text {
+	/*font-family: sans-serif;*/
+	fill: black;
+	font-size: 15px;
+}
+text.name {
+	font-weight: bold;
+	text-anchor: middle;
+}

@@ -13,7 +13,7 @@
 	<section class="step">
 		<blockquote>
 		Strategy lets the algorithm vary independently from clients that use it.
-		<footer><cite>Gamma <abbr title="and others">et al</abbr> (1994: 315)</cite></footer></footer>
+		<footer><cite>Gamma <abbr title="and others">et al</abbr> (1994: 315)</cite></footer>
 		</blockquote>
 	</section>
 
@@ -35,6 +35,94 @@
 	
 	<section class="step">
 		<h2>How?</h2>
+	</section>
+	
+	<section class="step">
+		<h3>Classic Strategy Pattern</h3>
+		<figure class="uml-diagram">
+			<object data="figures/classic-strategy.svg" type="image/svg+xml"></object>
+			<figcaption>Classic strategy pattern with interfaces</figcaption>
+		</figure>
+	</section>
+	
+	<section class="step">
+		<h3>Classic Strategy: Context</h3>
+		<pre>public class Context {
+    private IStrategy _strategy;
+    // Code to set _strategy
+    public void ContextInterface() {
+        _strategy.AlgorithmInterface();
+    }
+}</pre>
+	</section>
+	
+	<section class="step">
+		<h3>Classic Strategy: Strategy</h3>
+		<pre>public interface IStrategy {
+    void AlgorithmInterface();
+}
+
+public class StrategyA : IStrategy {
+    public void AlgorithmInterface () {
+        // Implementation
+    }
+}</pre>
+	</section>
+	
+	<section class="step">
+		<h3>Functional Strategy</h3>
+	</section>
+	
+	<section class="step">
+		<h3>Functional Strategy: Context</h3>
+		<pre>var Context = function () {
+    var strategy;
+    // Code to set strategy
+    this.contextInterface = function () {
+        strategy();
+    };
+}</pre>
+	</section>
+	
+	<section class="step">
+		<h3>Functional Strategy: Strategy</h3>
+		<pre>// No interface needed
+var strategyA = function () {
+    // Implementation
+}</pre>
+	</section>
+	
+	<section class="step">
+		<h2>Setting the strategy</h2>
+	</section>
+	
+	<section class="step">
+		<h3>Constructor: C#</h3>
+		<pre>public class Context {
+    private IStrategy _strategy;
+    public Context (IStrategy strategy) {
+        _strategy = strategy;
+    }
+    public ContextInterface () {
+        _strategy.AlgorithmInterface();
+    }
+}
+Context context = new Context(new StrategyA());</pre>
+	</section>
+	
+	<section class="step">
+		<h3>Constructor: JavaScript</h3>
+		<pre>var Context = function (strategy) {
+    var strategy = strategy;
+    this.contextInterface = function () {
+        strategy();
+    };
+}
+var context = new Context(strategyA);
+// or even anonymously
+var context = new Context(function () {
+    // Implementation
+});</pre>
 	</section>
 	
 	<section class="step">
@@ -71,6 +159,7 @@
 		</ul>
 	</section>
 </div>
-<!--<script src="impress.js/js/impress.js"></script>-->
+<script src="scripts/layout.js"></script>
+<script src="impress.js/js/impress.js"></script>
 </body>
 </html>

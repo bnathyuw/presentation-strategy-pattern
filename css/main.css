@@ -126,3 +126,12 @@ cite {
 .step#references {
 	font-size: 18px;
 }
+figcaption {
+	font-size: 26px;
+	font-weight: normal;
+	text-align: right;
+}
+pre {
+	font-family: monospace;
+	font-size: 18px;
+}
