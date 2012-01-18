@@ -126,6 +126,51 @@ var context = new Context(function () {
 	</section>
 	
 	<section class="step">
+		<h3>Setter: C#</h3>
+		<pre>public class Context {
+    public IStrategy Strategy { 
+        private get; set;
+    }
+    public ContextInterface () {
+        if(Strategy != null) {
+            Strategy.AlgorithmInterface();
+        }
+    }
+}
+Context context = new Context();
+context.Strategy = new StrategyA();</pre>
+	</section>
+	
+		<section class="step">
+		<h3>Setter: JavaScript (1)</h3>
+		<pre>var Context = function () {
+    var strategy;
+    this.setStrategy = function (value) {
+        strategy = value;
+    };
+    this.contextInterface = function () {
+        if (strategy) {
+            strategy();
+        }
+    };
+}</pre></section>
+	
+		<section class="step">
+		<h3>Setter: JavaScript (2)</h3>
+<pre>var context = new Context();
+context.setStrategy(strategyA);
+// or anonymously
+context.setStrategy(function () {
+    // Implementation
+});</pre>
+	</section>
+	
+	<section class="step" id="example-1">
+		<h3>Example</h3>
+		
+	</section>
+	
+	<section class="step">
 		<h2>SOLID?<h2>
 	</section>
 	
