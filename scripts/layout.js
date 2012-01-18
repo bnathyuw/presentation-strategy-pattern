@@ -1,11 +1,15 @@
 (function () {
-	var steps, i, step;
-	
+	"use strict";
+	var steps, totalSteps, i, step;
+
 	steps = document.querySelectorAll(".step");
-	
-	for (i = 0; i < steps.length; i = i + 1) {
+
+	totalSteps = steps.length;
+
+	for (i = 0; i < totalSteps; i = i + 1) {
 		step = steps[i];
-		step.setAttribute("data-x", i * 1000 + 50);
-		step.setAttribute("data-y", 100);
+		step.setAttribute("data-x", 2000 * Math.cos(i * Math.PI * 2 / totalSteps));
+		step.setAttribute("data-y", 2000 * Math.sin(i * Math.PI * 2 / totalSteps));
+		step.setAttribute("data-rotate", i * (360 / totalSteps));
 	}
 }());
