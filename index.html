@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html>
 <head>
 <title>Presentation: the strategy pattern</title>
@@ -34,6 +34,10 @@
 	</section>
 	
 	<section class="step">
+		<p>Mocking</p>
+	</section>
+	
+	<section class="step">
 		<h2>How?</h2>
 	</section>
 	
@@ -46,7 +50,7 @@
 	</section>
 	
 	<section class="step">
-		<h3>Classic Strategy: Context</h3>
+		<h3>Classic Strategy: Context (C#)</h3>
 		<pre>public class Context {
     private IStrategy _strategy;
     // Code to set _strategy
@@ -57,7 +61,7 @@
 	</section>
 	
 	<section class="step">
-		<h3>Classic Strategy: Strategy</h3>
+		<h3>Classic Strategy: Strategy (C#)</h3>
 		<pre>public interface IStrategy {
     void AlgorithmInterface();
 }
@@ -74,7 +78,7 @@ public class StrategyA : IStrategy {
 	</section>
 	
 	<section class="step">
-		<h3>Functional Strategy: Context</h3>
+		<h3>Functional Strategy: Context (JS)</h3>
 		<pre>var Context = function () {
     var strategy;
     // Code to set strategy
@@ -85,7 +89,7 @@ public class StrategyA : IStrategy {
 	</section>
 	
 	<section class="step">
-		<h3>Functional Strategy: Strategy</h3>
+		<h3>Functional Strategy: Strategy (JS)</h3>
 		<pre>// No interface needed
 var strategyA = function () {
     // Implementation
@@ -97,7 +101,7 @@ var strategyA = function () {
 	</section>
 	
 	<section class="step">
-		<h3>Constructor: C#</h3>
+		<h3>Constructor (C#)</h3>
 		<pre>public class Context {
     private IStrategy _strategy;
     public Context (IStrategy strategy) {
@@ -111,7 +115,7 @@ Context context = new Context(new StrategyA());</pre>
 	</section>
 	
 	<section class="step">
-		<h3>Constructor: JavaScript</h3>
+		<h3>Constructor (JS)</h3>
 		<pre>var Context = function (strategy) {
     var strategy = strategy;
     this.contextInterface = function () {
@@ -126,7 +130,7 @@ var context = new Context(function () {
 	</section>
 	
 	<section class="step">
-		<h3>Setter: C#</h3>
+		<h3>Setter (C#)</h3>
 		<pre>public class Context {
     public IStrategy Strategy { 
         private get; set;
@@ -142,7 +146,7 @@ context.Strategy = new StrategyA();</pre>
 	</section>
 	
 		<section class="step">
-		<h3>Setter: JavaScript (1)</h3>
+		<h3>Setter (JS 1)</h3>
 		<pre>var Context = function () {
     var strategy;
     this.setStrategy = function (value) {
@@ -156,7 +160,7 @@ context.Strategy = new StrategyA();</pre>
 }</pre></section>
 	
 		<section class="step">
-		<h3>Setter: JavaScript (2)</h3>
+		<h3>Setter (JS 2)</h3>
 <pre>var context = new Context();
 context.setStrategy(strategyA);
 // or anonymously
@@ -176,12 +180,17 @@ context.setStrategy(function () {
 	
 	<section class="step">
 		<h3>Single responsibility</h3>
-		<p>If you want to change the behaviour, you change the concrete strategy; not the context.</p>
+		<p>If you want to change the behaviour, you change the concrete strategy, not the context.</p>
 	</section>
 	
 	<section class="step">
 		<h3>Open/closed principle</h3>
-		<p>Substitute concrete strategies without changing the context code.<p>
+		<dl>
+			<dt>Open to extension</dt>
+			<dd>Substitute concrete strategies…</dd>
+			<dt>Closed to modification</dt>
+			<dd>…without changing the context code.</dd>
+		</dl>
 	</section>
 	
 	<section class="step">
@@ -191,10 +200,12 @@ context.setStrategy(function () {
 	
 	<section class="step">
 		<h3>Interface segregation principle</h3>
+		<p>Emphasis on single-method interface.</p>
 	</section>
 	
 	<section class="step">
 		<h3>Dependency inversion principle</h3>
+		<p>Fundamental</p>
 	</section>
 	
 	<section class="step" id="references">
@@ -202,6 +213,10 @@ context.setStrategy(function () {
 		<ul>
 			<li>Gamma E., Helm R., Johnson R. and Vlissides J. (1994) <cite>Design Patterns: Elements of reusable object-oriented software</cite>, Indianapolis: Addison Wesley</li>
 		</ul>
+	</section>
+	
+	<section class="step" id="fin">
+		<p>FIN</p>
 	</section>
 </div>
 <script src="scripts/layout.js"></script>
