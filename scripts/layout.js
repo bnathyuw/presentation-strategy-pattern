@@ -1,6 +1,6 @@
 (function () {
 	"use strict";
-	var steps, totalSteps, i, step;
+	var steps, totalSteps, i, step, angle;
 
 	steps = document.querySelectorAll(".step");
 
@@ -8,8 +8,9 @@
 
 	for (i = 0; i < totalSteps; i = i + 1) {
 		step = steps[i];
-		step.setAttribute("data-x", 3000 * Math.cos(i * Math.PI * 2 / totalSteps));
-		step.setAttribute("data-y", 3000 * Math.sin(i * Math.PI * 2 / totalSteps));
-		step.setAttribute("data-rotate", i * (360 / totalSteps));
+		angle = Math.round(i * 360 / totalSteps);
+		step.setAttribute("data-x", 3000 * Math.cos(Math.PI * angle / 180));
+		step.setAttribute("data-y", 3000 * Math.sin(Math.PI * angle / 180));
+		step.setAttribute("data-rotate", angle);
 	}
 }());
